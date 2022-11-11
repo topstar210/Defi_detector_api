@@ -20,7 +20,7 @@ class DefiController
         return json_encode($dappData);
     }
 
-    public function add(Request $request)
+    public function save(Request $request)
     {
         $mining_group_url = $request->post('mining_group_url');
         $mining_group_name = $request->post('mining_group_name');
@@ -40,7 +40,7 @@ class DefiController
         // $tvl24h = $request->post('tvl24h');
         $level = $request->post('level');
         $showflag = $request->post('showflag');
-        $rid = $request->post('rid');
+        $rid = $request->post('id');
         $insertData = [
             'mining_group_url' => $mining_group_url,
             'mining_group' => $mining_group_name,
