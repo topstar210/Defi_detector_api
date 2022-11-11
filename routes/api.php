@@ -17,6 +17,8 @@ use App\Http\Controllers\API\AuthController;
 
 Route::controller(DefiController::class)->group(function () {
     Route::get('/dapps/get', 'get');
+    Route::post('/dapps/save', 'add');
+    Route::post('/dapps/delete', 'delete');
 });
 
 Route::controller(AuthController::class)->group(function () {
