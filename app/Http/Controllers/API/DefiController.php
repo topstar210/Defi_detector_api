@@ -3,13 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Models\Dapps;
-use App\Models\Tokens;
-use App\Models\Partner;
-use App\Models\User;
-use App\Models\Influencer;
-use App\Models\Adsmanage;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
 class DefiController
 {
