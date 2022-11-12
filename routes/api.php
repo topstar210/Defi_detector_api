@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\DefiController;
 use App\Http\Controllers\API\TokensController;
+use App\Http\Controllers\API\InfluencerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,10 @@ Route::controller(TokensController::class)->group(function () {
     Route::get('/tokens/get', 'get');
     Route::post('/tokens/save', 'save');
     Route::post('/tokens/delete', 'delete');
+});
+
+Route::controller(InfluencerController::class)->group(function () {
+    Route::get('/influencer/get', 'get');
+    Route::post('/influencer/save', 'save');
+    Route::post('/influencer/delete', 'delete');
 });
