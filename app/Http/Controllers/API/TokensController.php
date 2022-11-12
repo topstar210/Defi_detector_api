@@ -16,32 +16,32 @@ class TokensController
 
     public function delete(Request $request)
     {
-        $rowId = $request->input('rid');
+        $rowId = $request->post('rid');
         $tokenData = Tokens::where('id', $rowId)->delete();
         return $this->get();
     }
     
     public function save(Request $request)
     {
-        $token_name = $request->input('token_name');
-        $coin = $request->input('coin');
-        $website = $request->input('website');
-        $presale_buy = $request->input('presale_buy');
-        $telegram = $request->input('telegram');
-        $discord = $request->input('discord');
-        $twitter = $request->input('twitter');
-        $launch = $request->input('launch');
-        $chain = $request->input('chain');
-        $audit = $request->input('audit');
-        $contract = $request->input('contract');
-        $kyc = $request->input('kyc');
-        $chart = $request->input('chart');
-        $market_cap = $request->input('market_cap');
-        $price = $request->input('price');
-        // $change_24h = $request->input('change_24h');
-        $level = $request->input('level');
-        $showflag = $request->input('showflag');
-        $rid = $request->input('rid');
+        $token_name = $request->post('name');
+        $coin = $request->post('coin');
+        $website = $request->post('website');
+        $presale_buy = $request->post('presale_buy');
+        $telegram = $request->post('telegram');
+        $discord = $request->post('discord');
+        $twitter = $request->post('twitter');
+        $launch = $request->post('launch');
+        $chain = $request->post('chain');
+        $audit = $request->post('audit');
+        $contract = $request->post('contract');
+        $kyc = $request->post('kyc');
+        $chart = $request->post('chart');
+        $market_cap = $request->post('market_cap');
+        $price = $request->post('price');
+        // $change_24h = $request->post('change_24h');
+        $level = $request->post('level');
+        $showflag = $request->post('showflag');
+        $rid = $request->post('id');
         $insertData = [
             'name' => $token_name,
             'chain' => $chain,
