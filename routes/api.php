@@ -5,6 +5,7 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\DefiController;
 use App\Http\Controllers\API\TokensController;
 use App\Http\Controllers\API\InfluencerController;
+use App\Http\Controllers\API\PartnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,10 @@ Route::controller(InfluencerController::class)->group(function () {
     Route::get('/influencer/get', 'get');
     Route::post('/influencer/save', 'save');
     Route::post('/influencer/delete', 'delete');
+});
+
+Route::controller(PartnerController::class)->group(function () {
+    Route::get('/partner/get', 'get');
+    Route::post('/partner/save', 'save');
+    Route::post('/partner/delete', 'delete');
 });
