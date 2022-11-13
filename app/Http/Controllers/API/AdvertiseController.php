@@ -10,7 +10,7 @@ class AdvertiseController
 
     public function get()
     {
-        $adsmanageData = Adsmanage::where('kind', null)->orderBy('level')->orderBy('created_at')->get();
+        $adsmanageData = Adsmanage::orderBy('level')->orderBy('created_at')->get();
         return json_encode($adsmanageData);
     }
 
@@ -33,11 +33,13 @@ class AdvertiseController
         }
 
         $level = $request->post('level');
+        $kind = $request->post('kind');
         $ads_url = $request->post('ads_url');
         Adsmanage::create([
             'image' => isset($imgname) ? $imgname: "",
             'link' => $ads_url,
             'level' => $level,
+            'kind' => $kind,
         ]);
         return $this->get();
     }
