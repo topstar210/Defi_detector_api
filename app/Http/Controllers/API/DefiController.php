@@ -10,7 +10,7 @@ class DefiController
     
     public function get()
     {
-        $dappData = Dapps::where('show_flag', '1')->orderBy('level')->orderBy('created_at')->get();
+        $dappData = Dapps::orderBy('level')->orderBy('created_at')->get();
         return json_encode($dappData);
     }
 
