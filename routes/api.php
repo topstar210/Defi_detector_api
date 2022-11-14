@@ -6,6 +6,7 @@ use App\Http\Controllers\API\DefiController;
 use App\Http\Controllers\API\TokensController;
 use App\Http\Controllers\API\InfluencerController;
 use App\Http\Controllers\API\PartnerController;
+use App\Http\Controllers\API\AdvertiseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,4 +48,10 @@ Route::controller(PartnerController::class)->group(function () {
     Route::get('/partner/get', 'get');
     Route::post('/partner/save', 'save');
     Route::post('/partner/delete', 'delete');
+});
+
+Route::controller(AdvertiseController::class)->group(function () {
+    Route::get('/admanage/get', 'get');
+    Route::post('/admanage/save', 'save');
+    Route::post('/admanage/delete', 'delete');
 });
