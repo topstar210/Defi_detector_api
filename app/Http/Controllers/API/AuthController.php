@@ -32,13 +32,15 @@ class AuthController extends BaseController
             return json_encode(['mtype'=> "error", "message"=> "wrong user" ]);;
         }
     }
+
     public function change_pwd(Request $request)
     {
-        $user = $request->input('user');
-        $new_pwd = $request->input('new_pwd');
+        $user = $request->post('username');
+        $new_pwd = $request->post('password');
         User::where('name', $user)->update(['password' => md5($new_pwd)]);
         return "success";
     }
+    
     public function check_token(Request $request)
     {
         $token = $request->post('token');

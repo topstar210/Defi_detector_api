@@ -23,7 +23,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/auth/login', 'check_user');
     Route::post('/auth/logout', 'logout');
     Route::post('/auth/checkToken', 'check_token');
-    Route::post('/auth/chagePassword', 'change_pwd');
+    Route::post('/auth/changePassword', 'change_pwd');
 });
 
 Route::controller(DefiController::class)->group(function () {
